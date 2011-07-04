@@ -1,0 +1,4 @@
+#summary Getting started with xxl
+
+= Installation =
+some words
