@@ -1,4 +1,4 @@
-* [Overview Overview]
+* Overview
  * [WhatXXL What is XXL ?]
  * [BasicComp Basic Components]
  * [QueryProc Query Processing]
