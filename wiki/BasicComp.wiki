@@ -25,3 +25,17 @@ A container is an implementation of a map that provides an abstraction from the 
 1. The class NativeRawAccessoffers native methods on a raw device. By using NativeRawAccess the class RawAccessRAF extends the class java.io.RandomAccessFile, which is the storage interface of BlockFileContainer.
 
 2. XXL offers an implementation of an entire ﬁle system that runs on a raw device. This is able to deliver ﬁles as objects of a class that extends java.io.RandomAccessFile. Therefore, an object of the class BlockFileContainercan store its blocks in ﬁles of XXL’s ﬁle system. 
+
+==Cursor==
+
+A cursor is an abstract mechanism to access objects within a stream. Cursors in XXL are independent from the speciﬁc type of the underlying objects. The interface of a cursor is given by
+<code language="java">
+    interface Cursor extends java.util.Iterator {
+        Object peek();
+        void update(Object o);
+        void reset();
+        void close();
+    }
+</code>
+
+A cursor extends the functionality of the iterator provided in the package java.util. The peek method reports the next object of the iteration without changing the state of the iteration. A call of reset sets the cursor to the beginning of the iteration. The method close stops the iteration and releases resources like ﬁle handles. The method update modiﬁes the current object of the iteration. XXL offers an algebra for processing cursors, i. e., there are a set of operations that require cursors as input and return a cursor as output. We distinguish between three kinds of cursors: � Input cursors are wrappers for transforming a data source into a cursor. For example, XXL provides an input cursor for transforming java.sql.ResultSet into a cursor.  � Processing cursors are the ones that modify the input cursor. Examples for such cursors are Join, Grouper, Mapper whose semantics are similar to the ones of the corresponding relational operators. � Flow cursors do not change the objects within the input stream, but they are restricted to change the underlying data ﬂow. For example, an instance of the class TeeCursor duplicates the input cursor.
