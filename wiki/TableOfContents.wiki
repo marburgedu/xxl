@@ -4,6 +4,6 @@
  * [QueryProc Query Processing]
  * [AdvFeat Advanced Features]
  * [RelWork Related Work]
-* Getting started with XXL
+* [GettingStarted Getting started with XXL]
  * [Install Installation]
  * [BasicExamp Basic Examples]
