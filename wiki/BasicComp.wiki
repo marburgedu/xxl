@@ -4,7 +4,7 @@
 
 Functional abstraction is a powerful mechanism for writing compact code. Since functions are not ﬁrst class citizens in Java, XXL provides the interface [http://code.google.com/p/xxl/source/browse/trunk/xxlcore/src/xxl/core/functions/Function.java Function] which has to be implemented by a functional class. A new functional object is declared at runtime using one of the following methods:
 
- 1. An anonymous class is implemented by extending `Function` and overriding a method `invoke` that should contain the executable code. An example for declaring a new function is given as follows:
+ 1. An anonymous class is implemented by extending [http://code.google.com/p/xxl/source/browse/trunk/xxlcore/src/xxl/core/functions/Function.java Function] and overriding a method `invoke` that should contain the executable code. An example for declaring a new function is given as follows:
  
 <code language="java">
 Function maxComp = new Function() {
