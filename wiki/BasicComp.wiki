@@ -1,5 +1,5 @@
 =Basic Components=
-
+<wiki:toc max_depth="2" />
 ==Functions and Predicates==
 
 Functional abstraction is a powerful mechanism for writing compact code. Since functions are not ﬁrst class citizens in Java, XXL provides the interface Function which has to be implemented by a functional class. A new functional object is declared at runtime using one of the following methods:
@@ -13,8 +13,6 @@ Function maxComp = new Function() {
         }
     }
 </code>
-    
-}}}
 
 2. The method compose of a functional object can be called to declare a new function by composition of functional objects.
 
