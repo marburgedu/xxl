@@ -1,5 +1,29 @@
-#summary One-sentence summary of this page.
+=Basic Components=
 
-= Introduction =
+==Functions and Predicates==
 
-TODO
+Functional abstraction is a powerful mechanism for writing compact code. Since functions are not ﬁrst class citizens in Java, XXL provides the interface Function which has to be implemented by a functional class. A new functional object is declared at runtime using one of the following methods:
+
+1. An anonymous class is implemented by extending Function and overriding a method invoke that should contain the executable code. An example for declaring a new function is given as follows:
+ 
+<code language="java">
+Function maxComp = new Function() {
+        public Object invoke (Object o1, Object o2) {
+            return (((Comparable) o1).compareTo(o2) > 0) ? o1 : o2;
+        }
+    }
+</code>
+    
+}}}
+
+2. The method compose of a functional object can be called to declare a new function by composition of functional objects.
+
+The code of a functional object is executed by calling the method invoke with the expected number of pa­rameters. Note that functional objects in XXL may have a status and therefore, are more powerful than pure mathematical functions. Due to its importance in database systems, we decided to provide a separate interface (Predicate) for Boolean functions. This improves the readability of the code as well as its performance since expensive casts are avoided. Relevant to databases are particularly predicates like exist for specifying subqueries and the predicates for supporting a three-value logic. 
+
+==Containers==
+
+A container is an implementation of a map that provides an abstraction from the underlying physical storage. If an object is inserted into a container, a new ID is created and returned. An object of a container can only be retrieved via the corresponding ID. Since a container is generally used for bridging the gap between levels of a storage hierarchy, mechanisms for buffer management are already included in a container. There are many different implementations of containers in XXL. The class MapContainer refers to a container where the set of objects is kept in main memory. The purpose of this container is to run queries fast in memory and to support debugging. The class BlockFileContainer represents a ﬁle of blocks, where a block refers to an array of bytes with a ﬁxed length. This is for instance useful when index-structures like R-trees are implemented. Java does not support operations on binary data and therefore, a block has to be serialized into its object representation. Java’s serialization mechanism is however not appropriate since it has to be deﬁned at compile time. It is also too inﬂexible because there is only at most one serialization method for a class. XXL overcomes these deﬁciencies by introducing the class ConverterContainerthat is a decorated container, i.e., an object of this class is a container and consists of a container. In addition, this class provides a converter that transforms an object into a different representation. A BufferedContainer is also a decorator. Its primary task is to support object buffering in XXL. In order to run experiments on external storage without interfering with the underlying operating systems, XXL contains classes that support access to raw devices. There are two possibilities:
+
+1. The class NativeRawAccessoffers native methods on a raw device. By using NativeRawAccess the class RawAccessRAF extends the class java.io.RandomAccessFile, which is the storage interface of BlockFileContainer.
+
+2. XXL offers an implementation of an entire ﬁle system that runs on a raw device. This is able to deliver ﬁles as objects of a class that extends java.io.RandomAccessFile. Therefore, an object of the class BlockFileContainercan store its blocks in ﬁles of XXL’s ﬁle system. 
