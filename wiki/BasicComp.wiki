@@ -36,6 +36,7 @@ A cursor is an abstract mechanism to access objects within a stream. Cursors in 
         void update(Object o);
         void reset();
         void close();
+        ...
     }
 </code>
 
