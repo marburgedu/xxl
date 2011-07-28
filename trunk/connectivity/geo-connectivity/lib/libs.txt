@@ -1,0 +1,9 @@
+Needed Libraries are
+
+* jts-1.8.jar
+	-> http://www.vividsolutions.com/jts/download.htm
+	-> JTS 1.8.0 (jts-1.8.0.zip)
+	
+* jump-core-1.2.jar, jump-workbench-1.2.jar
+	-> http://www.vividsolutions.com/jump/download.htm
+	-> JUMP 1.2 (jump-1.2.zip)
