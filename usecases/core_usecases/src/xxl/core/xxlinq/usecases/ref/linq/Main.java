@@ -40,8 +40,8 @@ public class Main {
 	 * @throws SQLException 
 	 */
 	public static void main(String[] args) throws SQLException {
-		List<String> numbers = Arrays.asList("eins","x","drei","x","fünf","x","sieben");
-		List<String> aNumbers = Arrays.asList("eins","zwei","drei","vier","fünf","sechs","sieben");
+		List<String> numbers = Arrays.asList("eins","x","drei","x","fuenf","x","sieben");
+		List<String> aNumbers = Arrays.asList("eins","zwei","drei","vier","fuenf","sechs","sieben");
 		XXLinqCursor cursor = XXLinqCursor.createXXLinqCursor(numbers, "numbers1", "digits");
 		XXLinqCursor aCursor = XXLinqCursor.createXXLinqCursor(aNumbers, "numbers2", "digits2");
 		

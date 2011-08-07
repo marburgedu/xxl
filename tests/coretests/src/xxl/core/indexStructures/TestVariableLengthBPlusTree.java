@@ -105,7 +105,6 @@ public class TestVariableLengthBPlusTree extends AbstractTreeIndexTest<VariableL
 
 		@Override
 		public int getMaxObjectSize() {
-			// 50 bytes für string 
 			return  50;
 		}
 
