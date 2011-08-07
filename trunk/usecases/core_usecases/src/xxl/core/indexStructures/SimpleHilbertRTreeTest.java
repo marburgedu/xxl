@@ -181,7 +181,7 @@ public class SimpleHilbertRTreeTest {
 		@Override
 		public Object clone() {
 			return new DoublePointRectangleSep(((Long)this.sepValue()).longValue(),
-					(DoublePointRectangle)this.entryMBR.clone()) ;
+					(DoublePointRectangle) ((Descriptor) this.entryMBR).clone()) ;
 		}
 	}
 	/**
@@ -197,7 +197,7 @@ public class SimpleHilbertRTreeTest {
 		@Override
 		public Object clone() {
 			return new LongRange(((Long)this.sepValue).longValue(), ((Long)this.maxBound).longValue(),
-					(DoublePointRectangle) this.entryMBR.clone() );
+					(DoublePointRectangle) ((Descriptor) this.entryMBR).clone());
 		}
 	}
 	/**
