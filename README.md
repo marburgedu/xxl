@@ -15,10 +15,16 @@ We are pleased to announce beta version 2.0 of our Java library XXL. This librar
 The main features of XXL are:
 
 A demand-driven cursor algebra including efficient implementations of object-relational operators such as joins, difference, MergeSort etc.
+
 An extended relational algebra based on java.sql.ResultSet
-A powerful framework of index-structures, e.g. B+tree, R-tree (linear and quadratic split Guttman et al), R*tree, RR*tree, Hilbert R-tree, R-tree (linear split Tan et al), X-tree, M-tree etc.
+
+A powerful framework of index-structures, e.g. B+tree, R-tree (linear and quadratic split Guttman et al), R*tree, RR*tree, 
+Hilbert R-tree, R-tree (linear split Tan et al), X-tree, M-tree etc.
+
 A framework for processing multi-way joins including spatial, temporal, and similarity joins
+
 The support of raw-I/O (using JNI), an own file system implementation, and a record manager
+
 In addition, version 2.0 of XXL comes along with the following new functionality:
 
 Skyline query R-tree extension
