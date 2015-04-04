@@ -18,7 +18,7 @@ A demand-driven cursor algebra including efficient implementations of object-rel
 
 An extended relational algebra based on java.sql.ResultSet
 
-A powerful framework of index-structures, e.g. B+tree, R-tree (linear and quadratic split Guttman et al), R*tree, RR*tree, 
+A powerful framework of index-structures, e.g. B+tree, R-tree (linear and quadratic split Guttman et al), R\*tree, RR\*tree, 
 Hilbert R-tree, R-tree (linear split Tan et al), X-tree, M-tree etc.
 
 A framework for processing multi-way joins including spatial, temporal, and similarity joins
